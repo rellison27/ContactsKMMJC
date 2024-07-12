@@ -39,7 +39,7 @@ class SqlDelightContactDataSource(
     override suspend fun insertContact(contact: Contact)
     {
         queries.insertContactEntity(
-            id = contact.id.toLong(),
+            id = contact.id?.toLong(),
             firstName = contact.firstName,
             lastName = contact.lastName,
             phoneNumber = contact.phoneNumber,
