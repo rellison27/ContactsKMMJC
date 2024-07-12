@@ -6,16 +6,19 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.contactscomposemultiplatform.App
+import com.example.contactscomposemultiplatform.di.AppModule
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            App(
+             App(
                 darkTheme = isSystemInDarkTheme(),
-                dynamicColor = true
+                dynamicColor = true,
+                appModule = AppModule(LocalContext.current.applicationContext)
             )
         }
     }
