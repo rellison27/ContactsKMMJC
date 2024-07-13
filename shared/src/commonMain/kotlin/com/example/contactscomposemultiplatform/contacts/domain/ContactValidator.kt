@@ -18,12 +18,12 @@ object ContactValidator
             result = result.copy(lastNameError = "Fill out the Last name is field")
         }
 
-        val emailRegex = Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}\$")
+        val emailRegex = Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}\$") // TODO fix this
         if(!emailRegex.matches(contact.email)) {
             result = result.copy(emailError = "The email is not valid")
         }
         if(contact.phoneNumber.isBlank()) {
-            result = result.copy(firstNameError = "Fill out the First name is field")
+            result = result.copy(phoneNumberError = "Fill out the Phone number is field")
         }
 
         return result
