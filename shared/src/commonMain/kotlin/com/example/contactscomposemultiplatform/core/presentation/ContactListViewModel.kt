@@ -79,10 +79,10 @@ class ContactListViewModel(
             }
             is ContactListEvent.EditContact ->
             {
-                _state.update {it.copy(
+                _state.update { it.copy(
                     selectedContact = null,
-                    isAddContactSheetOpen = false ,
-                    isSelectedContactSheetOpen = true
+                    isAddContactSheetOpen = true ,
+                    isSelectedContactSheetOpen = false
                 ) }
                 newContact = event.contact
             }
