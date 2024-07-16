@@ -76,6 +76,12 @@ fun ContactListScreen(
             }
         }
     }
+
+    ContactDetailSheet(
+        isOpen = state.isSelectedContactSheetOpen,
+        selectedContact = state.selectedContact,
+        onEvent = onEvent
+    )
     AddContactSheet(
         state = state,
         newContact = newContact,
