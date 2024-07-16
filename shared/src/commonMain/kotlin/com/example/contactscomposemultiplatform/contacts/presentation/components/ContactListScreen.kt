@@ -54,6 +54,12 @@ fun ContactListScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             item {
+                RecentlyAddedContacts(
+                    contacts = state.recentlyAddedContacts,
+                    onClick = { onEvent(ContactListEvent.SelectContact(it)) }
+                )
+            }
+            item {
                 Text(
                     text = "My contacts (${state.contacts.size})",
                     modifier = Modifier
